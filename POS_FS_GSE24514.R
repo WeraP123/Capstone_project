@@ -1,0 +1,10 @@
+library(Biobase)
+library(propOverlap)
+vclass <- as.vector(sampleInfo$group)
+vclass <- as.factor(vclass)
+tExpressionData <- t(ExpressionData)
+Score <- POS(tExpressionData, CI.emprical(tExpressionData,vclass), vclass)
+summary(Score)
+Selection.min <- Sel.Features(tExpressionData, vclass, K='30', Verbose = T)
+Selection.min <- Sel.Features(tExpressionData, vclass, K='43', Verbose = T)
+
