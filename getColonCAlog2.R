@@ -1,0 +1,10 @@
+library(Biobase)
+library(datasets)
+library(colonCA)
+data("colonCA")
+classColonCa <- colonCA@phenoData@data[["class"]]
+ExDataColonCA <- exprs(colonCA)
+summary(as.vector(ExDataColonCA))
+ExDataColonCA <- log2(ExDataColonCA)
+summary(as.vector(ExDataColonCA))
+boxplot(ExDataColonCA, outline = F)
