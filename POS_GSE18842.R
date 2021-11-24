@@ -1,6 +1,9 @@
 library(propOverlap)
-tExpressionData2 <- t(expressionData2)
-Score <- POS(tExpressionData2, CI.emprical(tExpressionData2, Tumor_Control), Tumor_Control)
-Gene.mask <- GMask(tExpressionData2, CI.emprical(tExpressionData2, Tumor_Control) ,Tumor_Control)
-Selection.k <- Sel.Features(tExpressionData2, Tumor_Control)
+ExpressionDataLung <- ExpressionDataLung
+Score <- POS(ExpressionDataLung, CI.emprical(ExpressionDataLung, ClassLungFactor), ClassLungFactor)
+Gene.mask <- GMask(ExpressionDataLung, CI.emprical(ExpressionDataLung, ClassLungFactor) ,ClassLungFactor)
+Selection.k <- Sel.Features(ExpressionDataLung, ClassLungFactor, K=10, Verbose = T)
 Selection.k$Features
+SelFTNumbers <- as.vector(Selection.k[["Features"]])
+SelFTNumbers <- sort(SelFTNumbers)
+SelFTNumbers
