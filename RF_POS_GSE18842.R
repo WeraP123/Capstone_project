@@ -1,7 +1,7 @@
-dt <-as.matrix(tEXpressionDataLung, Group = ClassLungFactor)
+dt <-as.matrix(SelColumnsExprs, ClassLungFactor)
 memory.limit()
 library(caret)
 set.seed(124)
 trainCtrl <-trainControl(method='cv', number=10, savePredictions = TRUE)
-rf.md.1 <- train(Group~.,data = dt,subset = SelFTNumbers, method ='rf',trControl = trainCtrl, tuneLength =10, ntree=50)
+rf.md.1 <- train(x = SelColumnsExprs, y = ClassLungFactor, method ='rf',trControl = trainCtrl, tuneLength =9, ntree=100)
 #Error: protect(): protection stack overflow

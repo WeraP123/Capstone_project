@@ -7,3 +7,7 @@ Selection.k$Features
 SelFTNumbers <- as.vector(Selection.k[["Features"]])
 SelFTNumbers <- sort(SelFTNumbers)
 SelFTNumbers
+tExpressionDataLung <- t(ExpressionDataLung)
+library(dplyr)
+SelColumnsExprs <- tExpressionDataLung[,c(256, 1547, 1815, 10462, 10699,10740,12404,12663,12810,14089)]
+SelColumnsDt <- dt[,c(256, 1547, 1815, 10462, 10699,10740,12404,12663,12810,14089)]
