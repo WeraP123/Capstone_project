@@ -1,5 +1,5 @@
 library(propOverlap)
-ExpressionDataLung <- ExpressionDataLung
+ExpressionDataLung <- t(ExpressionDataLun)
 Score <- POS(ExpressionDataLung, CI.emprical(ExpressionDataLung, ClassLungFactor), ClassLungFactor)
 Gene.mask <- GMask(ExpressionDataLung, CI.emprical(ExpressionDataLung, ClassLungFactor) ,ClassLungFactor)
 Selection.k <- Sel.Features(ExpressionDataLung, ClassLungFactor, K=10, Verbose = T)

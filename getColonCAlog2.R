@@ -5,7 +5,7 @@ data("colonCA")
 classColonCa <- colonCA@phenoData@data[["class"]]
 ExpressionData <- exprs(colonCA)
 summary(as.vector(ExpressionData))
-ExpressionData <- log2(ExpressionData)
+ExpressionData <- log2(exprs(colonCA))
 summary(as.vector(ExpressionData))
 boxplot(ExpressionData, outline = F)
 hist(ExpressionData, breaks=80, probability = T)
