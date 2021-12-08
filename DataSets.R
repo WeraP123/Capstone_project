@@ -11,7 +11,6 @@ GetBenchmarkData <- function(name, standardized = TRUE) {
           
          },
          GSE18842 = {
-           # https://sci2s.ugr.es/keel/dataset.php?cod=183
            X <- tExpressionDataLung[,c(256, 1547, 1815, 10462, 10699,10740,12404,12663,12810,14089)]
            y <- ClassLungFactor
          },
