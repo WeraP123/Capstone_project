@@ -6,4 +6,12 @@ gset <- gset[[idx]]
 
 ExpressionData <- exprs(gset)
 Class <- factor(gset@phenoData@data[["source_name_ch1"]])
+Class <- as.numeric(Class)-1
+Class <- as.factor(Class)
+
+table(Class)
+
+
+summary(as.vector(ExpressionData))
+skewness(ExpressionData)
 

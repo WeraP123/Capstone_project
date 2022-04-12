@@ -1,17 +1,14 @@
 library(Biobase)
 library(propOverlap)
-library(dplyr)
 
-ExpressionData <- scale(ExpressionData)
 Score <- POS(ExpressionData, CI.emprical(ExpressionData,Class), Class)
 summary(Score)
 
-Selection.min <- Sel.Features(ExpressionData, Class, K='10', Verbose = T)
+Selection.min <- Sel.Features(ExpressionData, Class, K='10', Verbose = F)
+Selection.min$Features
 SelectedFeatures <- as.vector(Selection.min[["Features"]])
-SelectedFeatures <- sort(SelectedFeatures)
-SelectedFeatures
-
 tExpressionData <- t(ExpressionData)
 SelectedExprs <- tExpressionData[,c(SelectedFeatures)]
 
 
+summary(as.vector(SelectedExprs))
